@@ -1,0 +1,68 @@
+<html>
+  <head> 
+    <title>Привет лошара</title>
+    <link rel="shortcut icon" href="https://cdn.icon-icons.com/icons2/1425/PNG/512/heart_98495.png"/>
+  </head>
+  <head>
+    <style>
+   
+      img#logo {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      img#center-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotate-center-image 0s linear infinite paused;
+      }
+
+      @keyframes rotate-center-image {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      #audio-controls {
+        position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+        top: 26%;
+   left: 50%;     
+  height: 100vh;
+}
+    </style>
+    <script>
+      function playAudio() {
+        const audio = document.getElementById("audio");
+        audio.play();
+        document.getElementById("center-image").style.animation =
+          "rotate-center-image 10s linear infinite running";
+      }
+
+      function pauseAudio() {
+        const audio = document.getElementById("audio");
+        audio.pause();
+        document.getElementById("center-image").style.animationPlayState = "paused";
+      }
+    </script>
+  </head>
+  <body>
+    <img id="logo" src="https://d2w9rnfcy7mm78.cloudfront.net/20218340/original_feb9f58d77b0190e8ca9a0622d63e686.png?1675588912?bc=0">
+    <img id="center-image" src="https://d2w9rnfcy7mm78.cloudfront.net/20218186/original_693da77da17c380faaa113632090a931.png?1675587841?bc=0">
+    <audio id="audio" src="https://mp3uks.ru/mp3/files/morgenshtern-eldzhej-kadillak-mp3.mp3" type="audio/mpeg"></audio>
+    <div id="audio-controls">
+      <button onclick="playAudio()">Play</button>
+      <button onclick="pauseAudio()">Pause</button>
+    </div>
+  </body>
+</html>
